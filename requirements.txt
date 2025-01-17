@@ -4,6 +4,5 @@ numpy
 streamlit
 osmnx
 geopandas
-random
 matplotlib
 secrets
