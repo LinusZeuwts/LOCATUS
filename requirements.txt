@@ -5,4 +5,3 @@ streamlit
 osmnx
 geopandas
 matplotlib
-secrets
