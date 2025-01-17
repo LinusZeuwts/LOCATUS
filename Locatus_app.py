@@ -60,7 +60,7 @@ st.title('SINCR - Leegstand')   #titel
 
 # # schrijf naar GeoJSON
 # df = gpd.GeoDataFrame(data=data_mechelen, geometry=data_mechelen['geometry'], crs=4329) # eerst naar gdf en dan naar GEOJSON, inladen nog testen
-# # 
+# df = df.loc[:, ['UNITID','JAAR', 'GEMEENTE', 'POSTCODE', 'PINC_HOOFDBRANCHE', 'geometry']]
 # df.to_file("data_mechelen.geojson", driver = 'GeoJSON')
 
 
@@ -73,12 +73,12 @@ data_mechelen = gpd.read_file('data_mechelen.geojson')
 
 ### STREAMLIT 
 # FILTER voor jaartal
-jaren = np.sort(data_mechelen['JAARDATE'].unique())
+jaren = np.sort(data_mechelen['JAAR'].unique())
 jaar_filter = st.select_slider('Selecteer een jaartal', options = [str(i) for i in jaren])    #slider
 
 ## filter data en splits data
 # filter volgens jaar
-data_mechelen_filter = data_mechelen[data_mechelen['JAARDATE'] == int(jaar_filter)]
+data_mechelen_filter = data_mechelen[data_mechelen['JAAR'] == int(jaar_filter)]
 
 # filter voor bewoond
 data_mechelen_filter_bewoond = data_mechelen_filter[data_mechelen_filter['PINC_HOOFDBRANCHE'] != 'leegstand'] # alle leegstand eruit
