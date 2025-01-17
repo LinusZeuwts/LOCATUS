@@ -6,3 +6,4 @@ osmnx
 geopandas
 matplotlib
 geopy
+streamlit-folium
