@@ -107,9 +107,9 @@ for _, r in data_mechelen_filter_bewoond.iterrows():
 for _, r in data_mechelen_filter_leegstand.iterrows():
     sim_geo = gpd.GeoSeries(r['geometry']).simplify(tolerance = 0.001)
     geo_j = sim_geo.to_json()
-    geo_j = folium.GeoJson(data = geo_j, style_function = lambda x: {'fillColor': 'orange',
+    geo_j = folium.GeoJson(data = geo_j, style_function = lambda x: {'fillColor': 'red',
                                                                      'color': "black",
-                                                                     'weight': 4})
+                                                                     'weight': 3})
     geo_j.add_to(m)
 
 # plot de kaart
