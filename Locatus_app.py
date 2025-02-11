@@ -109,7 +109,8 @@ for _, r in data_mechelen_filter_leegstand.iterrows():
     geo_j = sim_geo.to_json()
     geo_j = folium.GeoJson(data = geo_j, style_function = lambda x: {'fillColor': 'red',
                                                                      'color': "black",
-                                                                     'weight': 3})
+                                                                     'weight': 3,
+                                                                     'fillOpacity: 0'})
     geo_j.add_to(m)
 
 # plot de kaart
