@@ -113,6 +113,7 @@ for _, r in data_mechelen_filter_leegstand.iterrows():
     geo_j.add_to(m)
 
 # plot de kaart
+st.write('grijs: bewoond, rood: leegstand')
 st_data = st_folium(m, width = 750) #kaart
 
 ## ZIJBALK
